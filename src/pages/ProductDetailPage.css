@@ -1,0 +1,96 @@
+/* General container for the product details */
+.product-detail {
+    display: flex;
+    /* Use flexbox for horizontal layout */
+    gap: 20px;
+    /* Space between the image and the content */
+    padding: 20px;
+    align-items: flex-start;
+    /* Align items to the start (top) */
+    margin: 0 auto;
+    /* Center the content horizontally */
+    padding: 100px 0;
+}
+
+.product-image {
+    width: 700px;
+    /* Fixed width for the image */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    /* Ensures the image covers the space without distortion */
+    border-radius: 8px;
+    /* Rounded corners for the image */
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Space between the elements */
+    flex-grow: 1;
+    /* Allow the product info to take the remaining space */
+}
+
+.product-info h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subheading {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #2a9d8f;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+    line-height: 1.6;
+    /* Better spacing for readability */
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #2a9d8f;
+    /* Green color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #21867a;
+    /* Darker shade of green on hover */
+}
+
+@media (max-width: 768px) {
+
+    /* For smaller screens, stack the image and content vertically */
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-image {
+        width: 100%;
+        /* Image takes full width on small screens */
+        max-width: 400px;
+        /* Limit the image width */
+    }
+
+    .product-info {
+        align-items: center;
+    }
+}

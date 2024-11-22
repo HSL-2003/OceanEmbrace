@@ -4,14 +4,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2C3E50; /* Xanh đậm phong cách biển */
+  background-color: #2C3E50;
+  /* Xanh đậm phong cách biển */
   padding: 15px 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .brand-name h1 {
   font-size: 1.8rem;
-  color: #ECF0F1; /* Màu trắng nhạt cho thương hiệu */
+  color: #ECF0F1;
+  /* Màu trắng nhạt cho thương hiệu */
   margin: 0;
   font-family: 'Georgia', serif;
 }
@@ -33,12 +35,14 @@
 }
 
 .nav-links a:hover {
-  background-color: #871111; /* Màu xanh biển nhạt */
+  background-color: #871111;
+  /* Màu xanh biển nhạt */
   color: white;
 }
 
 .sign-in-btn {
-  background-color: #694946; /* Đỏ nhạt tạo điểm nhấn */
+  background-color: #694946;
+  /* Đỏ nhạt tạo điểm nhấn */
   color: white;
   padding: 8px 16px;
   border-radius: 5px;
@@ -49,7 +53,71 @@
 }
 
 .sign-in-btn:hover {
-  background-color: #300e0a; /* Đỏ đậm khi hover */
+  background-color: #300e0a;
+  /* Đỏ đậm khi hover */
+}
+
+.avatar-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-navbar img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.avatar-navbar p {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.avatar-navbar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  display: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.avatar-navbar-container:hover .dropdown-menu {
+  display: block;
+}
+
+.profile-link,
+.logout-btn {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.profile-link {
+  background-color: black;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+
+.logout-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
