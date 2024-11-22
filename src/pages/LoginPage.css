@@ -1,0 +1,131 @@
+/* Đặt nền cho trang đăng nhập */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3f4f6; /* Màu nền sáng nhẹ nhàng */
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Định dạng form */
+  .login-form {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ, tạo chiều sâu */
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Tiêu đề */
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  /* Nhóm input */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Label của các input */
+  .form-group label {
+    font-size: 14px;
+    color: #777;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  
+  /* Input các trường */
+  .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hiệu ứng focus cho input */
+  .form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Ánh sáng nhẹ khi focus */
+  }
+  
+  /* Nút submit */
+  .btn-submit {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hiệu ứng khi hover vào nút submit */
+  .btn-submit:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Nút nhấc lên khi hover */
+  }
+  
+  /* Thông báo lỗi */
+  .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  /* Liên kết chuyển trang */
+  .switch-page {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  
+  .switch-page a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .switch-page a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  
+  /* Tối ưu cho di động */
+  @media (max-width: 768px) {
+    .login-form {
+      padding: 30px 40px;
+    }
+  
+    .login-form h2 {
+      font-size: 24px;
+    }
+  
+    .form-group label,
+    .form-group input {
+      font-size: 14px;
+    }
+  
+    .btn-submit {
+      font-size: 14px;
+    }
+  }
+  

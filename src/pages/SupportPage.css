@@ -1,0 +1,77 @@
+.support-page {
+    margin: 20px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info, .faq {
+    margin-bottom: 30px;
+  }
+  
+  .contact-info p, .faq ul {
+    font-size: 1rem;
+  }
+  
+  .faq ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .faq li {
+    margin-bottom: 10px;
+  }
+  
+  .contact-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .contact-form label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-form button:hover {
+    background-color: #45a049;
+  }
+  .support-page {
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .page-title {
+    color: #333;
+    font-size: 2rem;
+  }
+  
+  .contact-info, .faq, .contact-form {
+    margin-top: 20px;
+  }
+  

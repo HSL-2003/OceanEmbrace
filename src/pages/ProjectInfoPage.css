@@ -1,0 +1,107 @@
+/* Tổng quan trang */
+.project-info {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f8;
+    padding: 40px 0;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tiêu đề trang */
+  .page-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .page-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .page-description {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 15px;
+    margin-bottom: 40px;
+  }
+  
+  /* Phần bài viết */
+  .article-section {
+    margin-top: 40px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .article-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .article {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+  }
+  
+  .article:hover {
+    transform: translateY(-10px);
+  }
+  
+  .article-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .article-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .article-summary {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .read-more {
+    font-size: 14px;
+    color: #f0f3f6;
+    text-decoration: none;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .article-list {
+      flex-direction: column;
+    }
+  }
+  
