@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './SellPage.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ export default function SellPage() {
                     <div className="content">
                         <h3>Sell your beautiful creations</h3>
                         <p>Subheading with description of your shopping site</p>
-                        <button>More</button>
+                        <button onClick={navToDetail}>More</button>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './ShopLandingPage.css'
 import { useNavigate } from 'react-router-dom';
 

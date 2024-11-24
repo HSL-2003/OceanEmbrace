@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import './HomePage.css';
 import HeroSection from '../components/HeroSection';
 import ProductSection from '../components/ProductSection';

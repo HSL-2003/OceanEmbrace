@@ -1,6 +1,6 @@
 import React from 'react';
 import './ProjectInfoPage.css'; // Đảm bảo sử dụng CSS mới để trang đẹp hơn
-import Footer from '../components/Footer'; // Import Footer
+
 
 const ProjectInfoPage: React.FC = () => {
   return (
