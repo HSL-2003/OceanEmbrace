@@ -15,7 +15,7 @@ export default function ShopLandingPage() {
                     <div className="content">
                         <h3>Necklace and more!</h3>
                         <p>Subheading with description of your shopping site</p>
-                        <button>Button</button>
+                        <button>More</button>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ export default function SellPage() {
                     <div className="content">
                         <h3>Sell your beautiful creations</h3>
                         <p>Subheading with description of your shopping site</p>
-                        <button>Button</button>
+                        <button>More</button>
                     </div>
                 </div>
             </div>

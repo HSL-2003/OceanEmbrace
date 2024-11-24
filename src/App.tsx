@@ -14,6 +14,9 @@ import ProfilePage from './pages/ProfilePage';
 import ShopLandingPage from './pages/ShopLandingPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import SellPage from './pages/SellPage';
+import CheckoutPage from './pages/CheckoutPage';
+import ThankPage from './pages/ThankPage';
+
 
 const App: React.FC = () => {
   return (
@@ -38,6 +41,8 @@ const App: React.FC = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/project-info" element={<ProjectInfoPage />} />
           <Route path="/support" element={<SupportPage />} /> {/* Route mới cho trang Support */}
+          <Route path="/checkout" element={<CheckoutPage/>} />
+          <Route path="/thank" element ={<ThankPage/>}/> 
         </Routes>
 
         {/* Footer hiển thị ở tất cả các trang */}

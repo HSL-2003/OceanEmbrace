@@ -22,6 +22,7 @@ const HomePage: React.FC = () => {
       {/* HeroSection và ProductSection */}
       <HeroSection />
       <ProductSection />
+   
 
       {/* Các bài viết */}
       <div className="articles">
