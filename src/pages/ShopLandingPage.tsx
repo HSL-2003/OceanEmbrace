@@ -1,110 +1,165 @@
+import { useState, useEffect } from "react";
+import "./ShopLandingPage.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-import './ShopLandingPage.css'
-import { useNavigate } from 'react-router-dom';
+interface Product {
+  artworkId: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+}
 
 export default function ShopLandingPage() {
-    const navigate = useNavigate();
-    const navToDetail = () => {
-        navigate("/detail")
-    }
-    return (
+  const [products, setProducts] = useState<Product[]>([]); // Danh sách sản phẩm từ API
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]); // Danh sách sản phẩm đã lọc
+  const [searchTerm, setSearchTerm] = useState<string>(""); // Từ khóa tìm kiếm
+  const [loading, setLoading] = useState<boolean>(true); // Trạng thái loading
+  const [error, setError] = useState<string | null>(null); // Trạng thái lỗi
+  const navigate = useNavigate();
+
+  // Lấy dữ liệu sản phẩm từ API
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(
+          "http://poserdungeon.myddns.me:5000/artwork"
+        );
+        if (response.status === 200 && response.data.items) {
+          setProducts(response.data.items); // Đảm bảo dữ liệu hợp lệ
+          setFilteredProducts(response.data.items); // Hiển thị toàn bộ sản phẩm ban đầu
+        } else {
+          setError("Failed to fetch products. Please try again later.");
+        }
+      } catch (error) {
+        setError("Error fetching products. Please check your connection.");
+      } finally {
+        setLoading(false); // Kết thúc trạng thái loading
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  // Xử lý tìm kiếm
+  const handleSearch = () => {
+    const filtered = products.filter((product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredProducts(filtered);
+  };
+
+  const navToDetail = (productId: number) => {
+    navigate(`/detail/${productId}`);
+  };
+
+  if (loading) {
+    return <div className="loading">Loading products...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
+
+  return (
+    <>
+      {/* Thanh tìm kiếm */}
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Find Someone ?..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button onClick={handleSearch} className="search-btn">
+          🔍 {/* Biểu tượng tìm kiếm */}
+        </button>
+      </div>
+
+      {/* Banner */}
+      <Banner />
+
+      {/* Kết quả tìm kiếm */}
+      {filteredProducts.length > 0 ? (
         <>
-            <div className="banner-container">
-                <div className="banner">
-                    <img src="/b71107b7443cff62a62d.jpg" alt="banner" />
-                    <div className="content">
-                        <h3>Necklace and more!</h3>
-                        <p>Subheading with description of your shopping site</p>
-                        <button>More</button>
-                    </div>
-                </div>
-            </div>
-            <div className="product-container">
-                <h3>Our products</h3>
-                <div className="product-row">
-                    <div className="product" onClick={() => navToDetail()}>
-                        <img src="/5b26c4089b8320dd79922.jpg" alt="banner" />
-                        <div className="product-info">
-                            <h4>Product</h4>
-                            <p>Description</p>
-                            <p>$10.99</p>
-                        </div>
-                    </div>
-                    <div className="product" onClick={() => navToDetail()}>
-                        <img src="/76d12d06738dc8d3919c4.jpg" alt="banner" />
-                        <div className="product-info">
-                            <h4>Product</h4>
-                            <p>Description</p>
-                            <p>$10.99</p>
-                        </div>
-                    </div>
-                    <div className="product" onClick={() => navToDetail()}>
-                        <img src="/251591c1cf4a74142d5b6.jpg" alt="banner" />
-                        <div className="product-info">
-                            <h4>Product</h4>
-                            <p>Description</p>
-                            <p>$10.99</p>
-                        </div>
-                    </div>
-                    <div className="product" onClick={() => navToDetail()}>
-                        <img src="/b69b87b1d83a63643a2b1.jpg" alt="banner" />
-                        <div className="product-info">
-                            <h4>Product</h4>
-                            <p>Description</p>
-                            <p>$10.99</p>
-                        </div>
-                    </div>
-                    <div className="product" onClick={() => navToDetail()}>
-                        <img src="/c0f15a2f04a4bffae6b53.jpg" alt="banner" />
-                        <div className="product-info">
-                            <h4>Product</h4>
-                            <p>Description</p>
-                            <p>$10.99</p>
-                        </div>
-                    </div>
-                    <div className="product" onClick={() => navToDetail()}>
-                        <img src="/c4396aed34668f38d6775.jpg" alt="banner" />
-                        <div className="product-info">
-                            <h4>Product</h4>
-                            <p>Description</p>
-                            <p>$10.99</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="product-container">
-                <h3>Top sales</h3>
-                <div className="sales-row">
-                    <div className='sales-1'>
-                        <div className="product-sales" onClick={() => navToDetail()}>
-                            <img src="/9ef819ca5a41e11fb85010.jpg" alt="banner" />
-                            <div className="product-info">
-                                <h4>Product</h4>
-                                <p>Description</p>
-                                <p>$10.99</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='sales-2'>
-                        <div className="product-sales" onClick={() => navToDetail()}>
-                            <img src="/85e003d34058fb06a2497.jpg" alt="banner" />
-                            <div className="product-info">
-                                <h4>Product</h4>
-                                <p>Description</p>
-                                <p>$10.99</p>
-                            </div>
-                        </div>
-                        <div className="product-sales" onClick={() => navToDetail()}>
-                            <img src="/cc62ab53e8d853860ac99.jpg" alt="banner" />
-                            <div className="product-info">
-                                <h4>Product</h4>
-                                <p>Description</p>
-                                <p>$10.99</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          {/* Our Products Section */}
+          <ProductSection
+            title="Our Products"
+            products={filteredProducts.slice(0, 6)}
+            onProductClick={navToDetail}
+          />
+
+          {/* Top Sales Section */}
+          <ProductSection
+            title="Top Sales"
+            products={filteredProducts.slice(7, 10)}
+            onProductClick={navToDetail}
+          />
         </>
-    )
+      ) : (
+        <p className="no-results">No products found.</p>
+      )}
+    </>
+  );
 }
+
+// Banner Component
+const Banner: React.FC = () => {
+  return (
+    <div className="banner-container">
+      <div className="banner">
+        <img src="/profile.jpg" alt="banner" />
+        <div className="content">
+          <h3>Necklace and More!</h3>
+          <p>Find unique and handcrafted items.</p>
+          
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ProductSection Component
+interface ProductSectionProps {
+  title: string;
+  products: Product[];
+  onProductClick: (productId: number) => void;
+}
+
+
+const ProductSection: React.FC<ProductSectionProps> = ({
+  title,
+  products,
+  onProductClick,
+  
+}) => {
+  return (
+    <div className="product-container">
+      <h3>{title}</h3>
+      <div className="product-row">
+        {products.map((product) => (
+          <div
+            key={product.artworkId}
+            className="product"
+            onClick={() => onProductClick(product.artworkId)}
+          >
+            <img
+              src={product.image}
+              alt={product.name}
+              className="product-img"
+            />
+           
+            
+            
+            <div className="product-info">
+              <h4>{product.name}</h4>
+              <p>{product.description}</p>
+              <p>${product.price.toFixed(2)}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

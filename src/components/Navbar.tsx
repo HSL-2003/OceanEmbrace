@@ -40,6 +40,7 @@ const NavBar: React.FC = () => {
   const handleLogout = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
+    localStorage.removeItem('cart')
     setUser(null);
     window.location.href = '/login';
   };
@@ -50,10 +51,12 @@ const NavBar: React.FC = () => {
         <h1>Ocean's Embrace</h1>
       </div>
       <div className="nav-links">
+        <a href="/">Home</a>
         <a href="/shop">Shop Now</a>
-        <a href="/search">Sell</a>
+        <a href='checkout'>Check Out</a>
+        <a href="/orderhistory">History</a>
         <a href="/cart">Customize</a>
-        <a href="/contact">Support</a>
+        <a href="/support">Support</a>
         {user === null ?
           <Link to="/login" className="btn-sign-in">Sign in / Sign Up</Link>
           : <div className="avatar-navbar-container">
@@ -66,6 +69,7 @@ const NavBar: React.FC = () => {
             </a>
             <div className="dropdown-menu">
               <Link to="/profile" className="profile-link">Profile</Link>
+              <Link to="/balance" className='balance-link'>Balance</Link>
               <button className="logout-btn" onClick={handleLogout}>Logout</button>
             </div>
           </div>}

@@ -31,8 +31,8 @@ const SupportPage: React.FC = () => {
       <section className="contact-info">
         <h3>Thông tin liên hệ</h3>
         <p><strong>Email:</strong> support@oceansembrace.com</p>
-        <p><strong>Phone:</strong> +84 123 456 789</p>
-        <p><strong>Địa chỉ:</strong> 123 Đường Biển, TP.HCM, Việt Nam</p>
+        <p><strong>Phone:</strong> +84 8999 01359 </p>
+        <p><strong>Địa chỉ:</strong> 288 Nguyễn Thị Minh Khai, Hóc Môn, TP.HCM, Việt Nam</p>
       </section>
 
       <section className="faq">

@@ -4,18 +4,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2C3E50;
-  /* Xanh đậm phong cách biển */
+  background-color: #2c3e50; /* Màu xanh đậm phong cách biển */
   padding: 15px 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Tăng độ bóng cho navbar */
+  border-radius: 8px; /* Bo tròn các góc */
 }
 
 .brand-name h1 {
   font-size: 1.8rem;
-  color: #ECF0F1;
-  /* Màu trắng nhạt cho thương hiệu */
+  color: #ecf0f1; /* Màu trắng sáng */
   margin: 0;
-  font-family: 'Georgia', serif;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
 }
 
 .nav-links {
@@ -25,53 +25,18 @@
 }
 
 .nav-links a {
-  color: #ECF0F1;
+  color: #ecf0f1;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  background-color: #871111;
-  /* Màu xanh biển nhạt */
+  background-color: #3498db; /* Xanh dương khi hover */
   color: white;
-}
-
-.sign-in-btn {
-  background-color: #694946;
-  /* Đỏ nhạt tạo điểm nhấn */
-  color: white;
-  padding: 8px 16px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.sign-in-btn:hover {
-  background-color: #300e0a;
-  /* Đỏ đậm khi hover */
-}
-
-.avatar-navbar {
-  display: flex;
-  align-items: center;
-}
-
-.avatar-navbar img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  margin-right: 4px;
-}
-
-.avatar-navbar p {
-  font-size: 1.9rem;
-  font-weight: bold;
 }
 
 .avatar-navbar-container {
@@ -79,56 +44,114 @@
   display: inline-block;
 }
 
+.avatar-navbar {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #ecf0f1;
+  font-weight: 600;
+}
+
+.avatar-navbar img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.avatar-navbar p {
+  font-weight: 600;
+}
+
+/* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  display: none;
+  background-color: #54687f;
+  border: 10px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  padding: 15px 20px;
+  display: none;
+  transition: all 0.3s ease;
   z-index: 1000;
-  min-width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Khoảng cách giữa các phần tử */
 }
 
+/* Hiển thị dropdown menu khi hover vào avatar-navbar-container */
 .avatar-navbar-container:hover .dropdown-menu {
-  display: block;
+  display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
+/* Style các phần tử trong dropdown */
 .profile-link,
-.logout-btn {
-  display: block;
-  padding: 10px;
-  text-align: center;
+.logout-btn,
+.balance-link {
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 0.95rem;
   text-decoration: none;
+  color: #0a0808; /* Đặt màu chữ là đen */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  flex: 1; /* Chia đều không gian */
+  text-align: center; /* Căn giữa chữ */
 }
 
+/* Đổi màu khi hover */
 .profile-link {
-  background-color: black;
-  color: #333;
-  border-bottom: 1px solid #ccc;
+  background-color: #16acc3;
+  font-weight: 600;
 }
 
+.profile-link:hover {
+  background-color: #bdc3c7;
+}
+
+.balance-link{
+  background-color: #3498db;
+}
+
+/* Nút Logout */
 .logout-btn {
-  background-color: red;
+  background-color: #e74c3c;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 5px;
+  padding: 12px;
+  font-weight: 600;
   width: 100%;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
 }
 
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px;
   }
 
   .nav-links {
     flex-direction: column;
     gap: 10px;
+    margin-top: 10px;
+  }
+
+  .avatar-navbar-container {
     margin-top: 10px;
   }
 }

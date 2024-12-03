@@ -16,7 +16,11 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import SellPage from './pages/SellPage';
 import CheckoutPage from './pages/CheckoutPage';
 import ThankPage from './pages/ThankPage';
-
+import BalancePage from './pages/BalancePage';
+import WithdrawPage from './pages/WithdrawPage';
+import DepositPage from './pages/DepositPage';
+import HistoryPage from './pages/HistoryPage';
+import OrderHistoryPage from './pages/OrderHistoryPage';
 
 const App: React.FC = () => {
   return (
@@ -25,10 +29,7 @@ const App: React.FC = () => {
         <ToastContainer />
         <NavBar />
 
-        {/* Liên kết quay về trang chủ khi bấm vào logo */}
-        <h2 className="homepage-title">
-          <Link to="/" className="homepage-link">Home</Link>
-        </h2>
+      
 
         {/* Định nghĩa các route */}
         <Routes>
@@ -36,13 +37,18 @@ const App: React.FC = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/shop" element={<ShopLandingPage />} />
-          <Route path="/detail" element={<ProductDetailPage />} />
+          <Route path="/detail/:id" element={<ProductDetailPage />} /> {/* Sửa lại đường dẫn */}
           <Route path="/sell" element={<SellPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/project-info" element={<ProjectInfoPage />} />
           <Route path="/support" element={<SupportPage />} /> {/* Route mới cho trang Support */}
           <Route path="/checkout" element={<CheckoutPage/>} />
           <Route path="/thank" element ={<ThankPage/>}/> 
+          <Route path="/orderhistory" element ={<OrderHistoryPage/>}/>
+          <Route path='/balance' element ={<BalancePage/>}></Route>
+          <Route path="/history" element={<HistoryPage />} />
+        <Route path="/deposit" element={<DepositPage />} />
+        <Route path="/withdraw" element={<WithdrawPage />} />
         </Routes>
 
         {/* Footer hiển thị ở tất cả các trang */}
