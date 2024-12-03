@@ -19,23 +19,25 @@ const RegisterPage: React.FC = () => {
       return;
     }
     try {
-
-      const response = await axios.post('http://poserdungeon.myddns.me:5000/register', {
+      // Tạo đối tượng data chứa thông tin cần gửi
+      const data = {
         fullName,
         emailAddress,
         password,
         confirmPassword,
-      });
+      };
+  
+      const response = await axios.post("/api/register", data);  // Gửi dữ liệu qua body request
+  
       if (response.status === 200) {
-        toast.success("Registration successful")
-        navigate("/login")
+        toast.success("Registration successful");
+        navigate("/login");
       } else {
-        toast.error("Registration fail")
+        toast.error("Registration failed");
       }
-      // Chuyển hướng hoặc thông báo thành công
     } catch (error) {
       console.error('Registration failed', error);
-      // Thông báo lỗi đăng ký
+      toast.error("Error registering user");
     }
   };
 
