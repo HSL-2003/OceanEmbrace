@@ -1,7 +1,7 @@
 /* Hero section container */
 .hero {
     position: relative;
-    background-image: url('bien.jpg'); /* Replace with your background image */
+    background-image: url('../assets/bien.jpg'); /* Replace with your background image */
     background-size: cover;
     background-position: center;
     height: 600px;

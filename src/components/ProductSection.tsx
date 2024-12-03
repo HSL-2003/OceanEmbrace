@@ -6,17 +6,17 @@ const ProductSection: React.FC = () => {
     { 
       title: 'BRACELET', 
       description: 'Chi tiết về sản phẩm ', 
-      image: 'vongtay.jpg' // Đường dẫn đến ảnh
+      image: '../assets/vongtay.jpg' // Đường dẫn đến ảnh
     },
     { 
       title: 'NECKLACE', 
       description: 'Chi tiết về sản phẩm ', 
-      image: 'vongco.jpg' // Đường dẫn đến ảnh
+      image: '../assets/vongco.jpg' // Đường dẫn đến ảnh
     },
     { 
       title: 'HANDMADE', 
       description: 'Chi tiết về sản phẩm ', 
-      image: 'handmade.jpg' // Đường dẫn đến ảnh
+      image: '../assets/handmade.jpg' // Đường dẫn đến ảnh
     },
   ];
 
