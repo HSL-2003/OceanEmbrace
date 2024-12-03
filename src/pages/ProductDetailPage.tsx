@@ -44,9 +44,7 @@ export default function ProductDetailPage() {
         setError("Error fetching product details. Please check your connection.");
       }
     };
-    const handleGoToCheckout = () => {
-      navigate("/checkout"); // Điều hướng đến trang checkout
-    };
+    
 
     const fetchAllProducts = async () => {
       try {
