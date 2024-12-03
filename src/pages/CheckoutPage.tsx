@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import { toast } from "react-toastify";
 import "./CheckoutPage.css";
@@ -21,7 +21,7 @@ export default function CheckoutPage() {
 
   const user = JSON.parse(localStorage.getItem("user") || "{}"); // Lấy thông tin người dùng
   const token = localStorage.getItem("token"); // Lấy token người dùng
-  const navigate = useNavigate();
+  
 
   // Lấy giỏ hàng từ localStorage
   useEffect(() => {
