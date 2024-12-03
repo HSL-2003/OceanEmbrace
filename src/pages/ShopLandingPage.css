@@ -61,7 +61,7 @@ body {
 .banner {
   
   height: 600px;
-  background: url('/profile.jpg') center/cover no-repeat;
+  background: url('../assets/profile.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;

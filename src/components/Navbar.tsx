@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';  // Đảm bảo đã cài
 import './Navbar.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import defaultAvatar from '../assets/vongco.jpg';
+
+
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -62,7 +65,7 @@ const NavBar: React.FC = () => {
           : <div className="avatar-navbar-container">
             <a className='avatar-navbar' href='/profile'>
               <img
-                src={user.avatar || '/vongco.jpg'}
+                src={user.avatar ? user.avatar: defaultAvatar}
                 alt="avatar"
               />
               {user.fullName}

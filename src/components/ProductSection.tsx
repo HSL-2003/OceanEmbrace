@@ -1,23 +1,14 @@
 import React from 'react';
 import './ProductSection.css';
+import braceletImg from '../assets/vongtay.jpg';
+import necklaceImg from '../assets/vongco.jpg';
+import handmadeImg from '../assets/handmade.jpg';
 
 const ProductSection: React.FC = () => {
   const products = [
-    { 
-      title: 'BRACELET', 
-      description: 'Chi tiết về sản phẩm ', 
-      image: '../assets/vongtay.jpg' // Đường dẫn đến ảnh
-    },
-    { 
-      title: 'NECKLACE', 
-      description: 'Chi tiết về sản phẩm ', 
-      image: '../assets/vongco.jpg' // Đường dẫn đến ảnh
-    },
-    { 
-      title: 'HANDMADE', 
-      description: 'Chi tiết về sản phẩm ', 
-      image: '../assets/handmade.jpg' // Đường dẫn đến ảnh
-    },
+    { title: 'BRACELET', description: 'Chi tiết về sản phẩm', image: braceletImg },
+    { title: 'NECKLACE', description: 'Chi tiết về sản phẩm', image: necklaceImg },
+    { title: 'HANDMADE', description: 'Chi tiết về sản phẩm', image: handmadeImg },
   ];
 
   return (

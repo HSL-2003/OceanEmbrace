@@ -6,7 +6,7 @@
     height: 100vh;
     background-color: #f4f7fb;
     font-family: 'Arial', sans-serif;
-    background-image: url('bien.jpg');
+    background-image: url('../assets/bien.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
