@@ -19,15 +19,15 @@ const RegisterPage: React.FC = () => {
       return;
     }
     try {
-      // Tạo đối tượng data chứa thông tin cần gửi
-      
-  
-      const response = await axios.post('http://poserdungeon.myddns.me:5000');  // Gửi dữ liệu qua body request
+     const data = {
         fullName,
         emailAddress,
         password,
         confirmPassword,
+      });
       };
+  
+      const response = await axios.post("/api/register", data);  // Gửi dữ liệu qua body request
       if (response.status === 200) {
         toast.success("Registration successful");
         navigate("/login");
